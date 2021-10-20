@@ -39,7 +39,7 @@ php artisan db:seed
 ```sh
 php artisan serve
 ```
-A aplicação deve rodar na url: **http://localhost:8000**
+A aplicação deve rodar na url: **http://localhost:8000/carros**
 |/carros [GET]|/carros/{id} [GET]|/carros/{id} [GET] id incorreto|
 |:--|:--|:--|
 |![carros](./docs/screenshoot_01.png)|![carros](./docs/screenshoot_02.png)|![carros](./docs/screenshoot_09.png)
@@ -74,6 +74,9 @@ docker build -t teste-phx .
 # Rodar o container na porta 8001
 docker run -p8001:80 -it teste-phx
 ```
+Abra no navegador: **http://localhost:8001/carros**
+
+
 |Terminal|Browser|
 |:---|:---|
 |![terminal](docs/screenshoot_12.png)|![browser](docs/screenshoot_13.png)

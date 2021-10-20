@@ -1,0 +1,9 @@
+FROM lorisleiva/laravel-docker:7.3
+# FROM bitnami/laravel:8.6.3-debian-10-r0
+USER root
+COPY . /app
+WORKDIR /app
+RUN composer install
+RUN php artisan migrate && \
+    php artisan db:seed
+CMD php artisan serve
