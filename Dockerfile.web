@@ -4,6 +4,6 @@ USER root
 COPY . /app
 WORKDIR /app
 RUN composer install
-CMD php artisan migrate && \
+CMD php artisan migrate:fresh && \
     php artisan db:seed && \
     php artisan serve --port=$PORT
