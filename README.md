@@ -1,14 +1,15 @@
 # Teste PHX
 Teste PHX.
+
 Instruções de execução deste teste: **[instruções](./docs/etapa_final.txt)**
 
  <br />  
 
 > Essa aplicação foi desenvolvidada e testada no ambiente Ubuntu 21.10
 # Requisitos
-* [PHP>=7.4.24](https://www.php.net/downloads.php)
-* [Composer>=2.0.14](https://getcomposer.org/download/)
-* [MySql>=5.7](https://www.mysql.com/downloads/)
+* [PHP >= 7.4.24](https://www.php.net/downloads.php)
+* [Composer >= 2.0.14](https://getcomposer.org/download/)
+* [MySql >= 5.7](https://www.mysql.com/downloads/)
 * [Docker](https://docs.docker.com/get-docker/) (Opcional)
 
 
@@ -80,6 +81,8 @@ Para essa aplicação foi adiciona uma documentação utilizando o **OpenApi + S
 
 > Para a documentação funcione corretamente é necessário que as migrations e seeders já tenham sido efetuadas.
 
+Com a aplicação rodando.
+
 Abra o navegador na url: **http://localhost:8000/api/documentation**
 
 
@@ -105,12 +108,21 @@ docker build -t teste-phx .
 # Rodar o container na porta 8001
 docker run -p8001:80 -it teste-phx
 ```
+Após o container carregar completamente.
+
+
 Abra no navegador: **http://localhost:8001/carros**
+
+Documentação na url: **http://localhost:8001/api/documentation**
 
 
 |Terminal|Browser|
 |:---|:---|
 |![terminal](docs/screenshoot_12.png)|![browser](docs/screenshoot_13.png)
+
+|Swagger|
+|:---|
+|![Swagger](docs/screenshoot_19.png)|
 
 # Referencias
 * https://github.com/lucascudo/laravel-pt-BR-localization
