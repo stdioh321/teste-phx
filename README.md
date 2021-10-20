@@ -2,11 +2,16 @@
 Teste PHX.
 Instruções de execução deste teste: **[instruções](./docs/etapa_final.txt)**
 
+ <br />  
+
+> Essa aplicação foi desenvolvidada e testada no ambiente Ubuntu 21.10
 # Requisitos
 * [PHP>=7.4.24](https://www.php.net/downloads.php)
-* [Composer=>2.0.14](https://getcomposer.org/download/)
-* [MySql=>5,7](https://www.mysql.com/downloads/)
+* [Composer>=2.0.14](https://getcomposer.org/download/)
+* [MySql>=5.7](https://www.mysql.com/downloads/)
 * [Docker](https://docs.docker.com/get-docker/) (Opcional)
+
+
 
 # Setup
 ```sh
@@ -18,6 +23,9 @@ composer install
 
 # Configurar o mysql
 # Criar o banco de dados da aplicaçao e o de testes
+# Talves esse comando precise da senha de root.
+
+# mysqladmin create -p[SENHA_ROOT] phx
 mysqladmin create phx
 mysqladmin create phx_test
 
@@ -67,6 +75,7 @@ A aplicação possui alguns testes com phpunit.
 |![carros](./docs/screenshoot_07.png)|
 
 # Rodar com Docker
+
 ```sh
 # Criar a imagem que possui o laravel e mysql utilizando o Dockerfile
 docker build -t teste-phx .
