@@ -20,6 +20,14 @@ Foi feito o deploy da aplicacao no ambiente de teste do [heroku](https://devcent
 Acesse:
 **https://teste-phx.herokuapp.com/carros**
 
+
+Documentação (Swagger):
+**https://teste-phx.herokuapp.com/api/documentation**
+
+|Home|Swagger|
+|:---|:---|
+|![home](docs/screenshoot_21.png)|![swagger](docs/screenshoot_20.png)
+
 # Setup
 ```sh
 git clone https://github.com/stdioh321/teste-phx.git
