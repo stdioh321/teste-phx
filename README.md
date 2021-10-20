@@ -12,7 +12,13 @@ Instruções de execução deste teste: **[instruções](./docs/etapa_final.txt)
 * [MySql >= 5.7](https://www.mysql.com/downloads/)
 * [Docker](https://docs.docker.com/get-docker/) (Opcional)
 
+# DEMO
+Foi feito o deploy da aplicacao no ambiente de teste do [heroku](https://devcenter.heroku.com/) e com o bando de dados mysql no remotemysql.com.
 
+> Obs: Pode demorar um tempo para a aplicação rodar, pois no heroku, o container da aplicação é destruído depois de um tempo e quando ocorre uma requisição o ele é construído novamente.
+
+Acesse:
+**https://teste-phx.herokuapp.com/carros**
 
 # Setup
 ```sh
