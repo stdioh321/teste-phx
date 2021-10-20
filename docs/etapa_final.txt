@@ -1,0 +1,23 @@
+ETAPA FINAL (TESTE):
+
+
+
+Após a realização desse teste, você precisará pôr no GitHub, e nos encaminhará o link.
+
+Desenvolvimento Laravel 5:
+
+Descrição:
+
+Você deverá desenvolver uma 'mini api' para que seja possível realizar operações CRUD do objeto Carro.
+Obs:
+
+Você deve usar mysql como banco de dados.
+Cada carro deve ter ID, Marca, Modelo, Ano.
+
+Sugerimos o retorno dessa 'mini api' nas seguinte urls:
+
+/carros - [GET] deve retornar todos os carros cadastrados.
+/carros - [POST] deve cadastrar um novo carro.
+/carros/{id}[GET] deve retornar o carro com ID especificado.
+/carros/{id}[PUT] deve atualizar os dados do carro com ID especificado.
+/carros/{id}[DELETE] deve apagar o carro com ID especificado.
