@@ -73,6 +73,7 @@ class CarrosController extends Controller
 
         if (empty($oldCarro))
             return $this->responseJson(null, 404);
+
         $params = $request->only(["marca", "modelo", "ano"]);
         $validate = Validator::make($params, [
             "marca" => "required|max:255|string|sometimes",

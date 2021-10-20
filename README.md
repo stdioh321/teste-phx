@@ -74,6 +74,28 @@ A aplicação possui alguns testes com phpunit.
 |:---|
 |![carros](./docs/screenshoot_07.png)|
 
+
+# Documentação (OpenApi + Swagger)
+Para essa aplicação foi adiciona uma documentação utilizando o **OpenApi + Swagger**.
+
+> Para a documentação funcione corretamente é necessário que as migrations e seeders já tenham sido efetuadas.
+
+Abra o navegador na url: **http://localhost:8000/api/documentation**
+
+
+|Index|GET por id|
+|:--|:--|
+|![index](./docs/screenshoot_14.png)|![get por id](./docs/screenshoot_15.png)
+
+|POST com dados incorretos|PUT|
+|:--|:--|
+|![POST com dados incorretos](./docs/screenshoot_16.png)|![PUT](./docs/screenshoot_17.png)|
+
+
+|DELETE|
+|:--| 
+|![DELETE](./docs/screenshoot_18.png)|
+
 # Rodar com Docker
 
 ```sh
@@ -94,3 +116,4 @@ Abra no navegador: **http://localhost:8001/carros**
 * https://github.com/lucascudo/laravel-pt-BR-localization
 * https://seucarro.net/marcas-e-modelos-de-automoveis/
 * https://developpaper.com/using-swagger-in-laravel-5-6/
+* https://editor.swagger.io/

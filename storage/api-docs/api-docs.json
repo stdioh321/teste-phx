@@ -1,0 +1,330 @@
+{
+    "openapi": "3.0.0",
+    "servers": [{
+        "url": "/{endpoint}",
+        "description": "Endpoint padrao da API",
+        "variables": {
+            "endpoint": {
+                "default": "",
+                "description": "Endpoint padrao da API"
+            }
+        }
+    }],
+    "info": {
+        "title": "Documentacao da Api de Carros",
+        "version": "1.0.0",
+        "description": "Api contendo modelos e marcas de carros"
+    },
+    "components": {
+        "schemas": {
+            "carro": {
+                "type": "object",
+                "example": {
+                    "marca": "Fiat",
+                    "modelo": "Tipo",
+                    "ano": "2001-10-09"
+                },
+                "properties": {
+                    "marca": {
+                        "type": "string"
+                    },
+                    "modelo": {
+                        "type": "string"
+                    },
+                    "ano": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "/carros": {
+            "get": {
+                "tags": [
+                    "GET"
+                ],
+                "summary": "GET Carros",
+                "description": "Endpoint para recuperar todos os carros",
+                "operationId": "76f9f0125b62cb4584b212a114e2904a",
+                "responses": {
+                    "200": {
+                        "description": "Todos os carros",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": [{
+                                        "id": 1,
+                                        "marca": "Chery",
+                                        "modelo": "Celer Hatch",
+                                        "ano": "2023-10-09"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "marca": "Fiat",
+                                        "modelo": "Doblò",
+                                        "ano": "2023-01-21"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "POST"
+                ],
+                "summary": "POST Carro",
+                "description": "Endpoint para adicionar um carro",
+                "operationId": "76f9f0125b62cb4584b212a114e2904c",
+                "requestBody": {
+                    "description": "Corpo do post",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/carro",
+                                "required": true,
+                                "example": {
+                                    "marca": "Fiat",
+                                    "modelo": "Tipo",
+                                    "ano": "2001-04-03"
+                                }
+                            },
+                            "example": {
+                                "marca": "Fiat",
+                                "modelo": "Tipo",
+                                "ano": "2001-04-03"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Carro criado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "id": 7,
+                                    "marca": "Chery",
+                                    "modelo": "Celer Hatch",
+                                    "ano": "2023-10-09"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Carro invalido",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "marca": [
+                                        "O campo marca é obrigatório."
+                                    ],
+                                    "modelo": [
+                                        "O campo modelo é obrigatório."
+                                    ],
+                                    "ano": [
+                                        "O campo ano não é uma data válida."
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/carros/{id}": {
+            "get": {
+                "tags": [
+                    "GET"
+                ],
+                "summary": "GET Carro por id",
+                "description": "Endpoint para recuperar um unico carro",
+                "operationId": "76f9f0125b62cb4584b212a114e2904b",
+                "parameters": [{
+                    "name": "id",
+                    "required": true,
+                    "in": "path",
+                    "example": "3",
+                    "schema": {
+                        "type": "integer"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Um objeto Carro",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "id": 3,
+                                    "marca": "Marca altereda",
+                                    "modelo": "Modelo alteredo",
+                                    "ano": "2021-01-01"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Carro nao encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "DELETE"
+                ],
+                "summary": "DELETE Carro por id",
+                "description": "Endpoint para deletar um unico carro",
+                "operationId": "76f9f0125b62cb4584b212a114e2904d",
+                "parameters": [{
+                    "name": "id",
+                    "required": true,
+                    "in": "path",
+                    "example": "4",
+                    "schema": {
+                        "type": "integer"
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Um objeto Carro",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "id": 4,
+                                    "marca": "Honda",
+                                    "modelo": "CR-V",
+                                    "ano": "2023-05-20"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Carro nao encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "PUT"
+                ],
+                "summary": "PUT Carro por id e corpo em json",
+                "description": "Endpoint para atualizar um unico carro",
+                "operationId": "76f9f0125b62cb4584b212a114e2904e",
+                "parameters": [{
+                    "name": "id",
+                    "required": true,
+                    "in": "path",
+                    "example": "3",
+                    "schema": {
+                        "type": "integer"
+                    }
+                }],
+                "requestBody": {
+                    "description": "Corpo do put",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/carro",
+                                "required": true,
+                                "example": {
+                                    "marca": "Marca alterada",
+                                    "modelo": "Modelo alterado",
+                                    "ano": "2021-01-01"
+                                }
+                            },
+                            "example": {
+                                "marca": "Marca alterada",
+                                "modelo": "Modelo alterado",
+                                "ano": "2021-01-01"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Um objeto Carro",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "id": 4,
+                                    "marca": "Honda",
+                                    "modelo": "CR-V",
+                                    "ano": "2023-05-20"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Carro nao enctrado",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Carro invalido",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                },
+                                "example": {
+                                    "marca": [
+                                        "O campo marca é obrigatório."
+                                    ],
+                                    "modelo": [
+                                        "O campo modelo é obrigatório."
+                                    ],
+                                    "ano": [
+                                        "O campo ano não é uma data válida."
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
