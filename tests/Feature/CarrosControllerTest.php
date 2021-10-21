@@ -18,6 +18,7 @@ class CarrosControllerTest extends TestCase
     // A cada teste será efetuada a "migration" para limpar as tabelas
     public function setUp()
     {
+
         parent::setUp();
         Artisan::call('migrate:fresh', ['--env' => 'testing']);
 
@@ -54,6 +55,7 @@ class CarrosControllerTest extends TestCase
     public function test_get_carro_por_id_invalido()
     {
         $carro = $this->addCarro();
+
         $response = $this->json("get", "{$this->baseRoute}/{$this->idInvalido}");
         $response->assertNotFound();
         $response->assertJsonFragment(array());

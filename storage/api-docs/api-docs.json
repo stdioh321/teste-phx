@@ -15,6 +15,9 @@
         "version": "1.0.0",
         "description": "Api contendo modelos e marcas de carros"
     },
+    "schemes": [
+        "https"
+    ],
     "components": {
         "schemas": {
             "carro": {
